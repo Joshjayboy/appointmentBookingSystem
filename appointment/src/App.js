@@ -19,7 +19,10 @@ import { useSelector } from "react-redux";
 import BookingList from "./Screens/Dashboard/Admin/BookingList";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+import Aos from "aos";
+import AddTime from "./Screens/Dashboard/Admin/AddTime";
 function App() {
+  Aos.init();
   const dispatch = useDispatch();
 
   const { userInfo } = useSelector((state) => state.userLogin);
@@ -59,12 +62,19 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/addBooking" element={<AddBooking />} />
             {/* ***************PRIVATE ROUTES ****************** */}
-
             <Route
               path="/dashboard"
               element={
                 <ProtectedRoute user={user}>
                   <Dashboard></Dashboard>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/addTime"
+              element={
+                <ProtectedRoute user={user}>
+                  <AddTime></AddTime>
                 </ProtectedRoute>
               }
             />

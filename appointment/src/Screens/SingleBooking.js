@@ -22,8 +22,6 @@ function SingleBooking() {
   };
 
   const handleSave = async (date, time) => {
-    console.log(`Scheduled for: ${date} at ${time}`);
-    console.log(book.id);
     const single = book.id;
     setShowModal(false);
     try {
@@ -42,7 +40,7 @@ function SingleBooking() {
       <div className="w-full xl:h-screen relative text-deep">
         <img
           src={book.imgUrl}
-          alt="mmmmm"
+          alt="backgroundImage"
           className="w-full hidden xl:inline-block h-full object-cover"
         />
         <div className="xl:bg-main bg-dry flex-colo xl:bg-opacity-90 xl:absolute top-0 left-0 right-0 bottom-0">

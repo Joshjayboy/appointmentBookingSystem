@@ -23,11 +23,7 @@ function Users() {
   );
 
   // delete user handler
-  const deleteMoviesHandler = (id) => {
-    if (window.confirm("Are you sure you want to delete this user")) {
-      dispatch(deleteUserAction(id));
-    }
-  };
+
   // useEffect
   useEffect(() => {
     dispatch(getAllUsersAction());

@@ -43,7 +43,7 @@ function SideBar({ children }) {
     },
     {
       name: "Add Time",
-      link: "/#",
+      link: "/addTime",
       icon: RiMovie2Fill,
     },
     {

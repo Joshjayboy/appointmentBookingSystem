@@ -34,15 +34,10 @@ function Register() {
     resolver: yupResolver(RegisterValidation),
   });
 
-  // on submit
-  // const onSubmit = (data) => {
-  //   dispatch(registerAction(data));
-  // };
   const signUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
         navigate("/profile");
       })
       .catch((error) => {

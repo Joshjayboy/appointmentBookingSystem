@@ -21,7 +21,6 @@ function Login() {
     (state) => state.userLogin
   );
 
-
   const {
     register,
     handleSubmit,
@@ -41,7 +40,6 @@ function Login() {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
         if (email === "booking@gmail.com" && password === "123456789") {
           navigate("/dashboard");
           toast("login successfull");

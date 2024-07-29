@@ -24,9 +24,6 @@ function BookingList() {
           return data;
         });
         setData(appoint);
-        appoint.forEach((book) => console.log(book.id));
-        console.log("this is appointment", appoint);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching data: ", error);
       } finally {

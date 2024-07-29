@@ -80,7 +80,6 @@ function Profile() {
             label="FullName"
             placeholder="FullName"
             type="text"
-            bg={true}
             name="fullName"
             register={register("fullName")}
           />
@@ -94,7 +93,6 @@ function Profile() {
             type="email"
             name="email"
             register={register("email")}
-            bg={true}
           />
           {errors.email && <InlineError text={errors.email.message} />}
         </div>
@@ -105,14 +103,11 @@ function Profile() {
             disabled={deleteLoading || isLoading}
             className="bg-subMain font-medium transitions hover:bg-main hover:text-black border border-subMain text-white py-3 px-6  rounded w-full sm:w-auto"
           >
-            {deleteLoading ? "Deleting..." : "Delete Account"}
+            Delete Account
           </button>
 
-          <button
-            disabled={deleteLoading || isLoading}
-            className="bg-subMain font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6  rounded w-full sm:w-auto"
-          >
-            {isLoading ? "Updating..." : "Update Profile"}
+          <button className="bg-subMain font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6  rounded w-full sm:w-auto">
+            Update Profile
           </button>
         </div>
       </form>

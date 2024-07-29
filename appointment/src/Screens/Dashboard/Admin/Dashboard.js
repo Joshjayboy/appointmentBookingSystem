@@ -42,7 +42,6 @@ function Dashboard() {
     },
   ];
   useEffect(() => {
-    console.log("i reach here 1");
     const fetchData = async () => {
       try {
         const querySnapshot = await getDocs(collection(txtDB, "txtData"));
@@ -52,10 +51,6 @@ function Dashboard() {
           return data;
         });
         setData(appoint);
-        appoint.forEach((book) => console.log(book.id));
-        console.log("this is appointment", appoint);
-        console.log(data);
-        console.log("i reach here 2");
       } catch (error) {
         console.error("Error fetching data: ", error);
       }
@@ -71,14 +66,11 @@ function Dashboard() {
       });
       alert("Field deleted successfully");
 
-      // Optionally, refetch the data or update the state to remove the deleted field
       const updatedData = data.map((item) =>
         item.id === id ? { ...item, txtVal: undefined } : item
       );
       setData(updatedData);
-      console.log("i reach here 4");
     } catch (error) {
-      console.error("Error deleting field: ", error);
       alert("Failed to delete the field");
     }
   };

@@ -3,7 +3,6 @@ import Layout from "../Layout/Layout";
 import AvailableBookings from "./../Components/Home/AvailableBookings";
 import TopRated from "./../Components/Home/TopRated";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-hot-toast";
 import { txtDB, imgDB } from "../firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { addDoc, collection, getDocs } from "firebase/firestore";
@@ -23,7 +22,6 @@ function HomeScreen() {
           return data;
         });
         setData(appoint);
-        appoint.forEach((book) => console.log(book.id));
       } catch (error) {
         console.error("Error fetching data: ", error);
       }

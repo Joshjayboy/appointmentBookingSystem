@@ -17,8 +17,8 @@ function MenuDrawer({ drawerOpen, toggleDrawer }) {
 
   const Links = [
     {
-      name: "Movies",
-      link: "/movies",
+      name: "Booking",
+      link: "/",
       icon: BsCollectionPlay,
     },
     {
